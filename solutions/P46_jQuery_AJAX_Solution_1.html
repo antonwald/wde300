@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery AJAX</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+    </head>
+    <body>
+        <h3>jQuery AJAX</h3>
+
+        <p>
+            <button id="loadJabberwocky">
+                Jabberwocky
+            </button>
+            <button id="loadTweedledum">
+                Tweedledee and Tweedledum
+            </button>
+            <button id="loadUnicorn">
+                The Lion and the Unicorn
+            </button>
+            <button id="loadCarpenter">
+                The Walrus and the Carpenter
+            </button></p>
+        <div id="poem">A Poem</div>
+
+        <script>
+          $(document).ready(function() {
+            $("#loadJabberwocky").click(function() {
+              $("#poem").load("files/poems.html #Jabberwocky");
+            });
+            $("#loadTweedledum").click(function() {
+              $("#poem").load("files/poems.html #Tweedledum");
+            });
+            $("#loadUnicorn").click(function() {
+              $("#poem").load("files/poems.html #Unicorn");
+            });
+            $("#loadCarpenter").click(function() {
+              $("#poem").load("files/poems.html #Carpenter");
+            });
+          });
+        </script>
+    </body>
+</html>

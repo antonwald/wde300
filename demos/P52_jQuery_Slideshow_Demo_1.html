@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Web Development Recipe No. 4 (Pragmatic Programmers) -->
+        <meta charset="utf-8" />
+        <title>AwesomeCo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
+    </head>
+    <body>
+
+        <h1>AwesomeCo</h1>
+
+        <div id="slideshow">
+            <img src="img/slideshow/house-light-slide.jpg">
+            <img src="img/slideshow/lake-bench-slide.jpg">
+            <img src="img/slideshow/old-building-slide.jpg">
+            <img src="img/slideshow/oldbarn-slide.jpg">
+            <img src="img/slideshow/streetsign-with-highlights-slide.jpg">
+            <img src="img/slideshow/water-stairs-slide.jpg">
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#slideshow').cycle({fx: 'fade'});
+                setupButtons();
+            });
+            
+            var setupButtons = function () {
+                var slideShow = $('#slideshow');
+                
+                var pause = $('<span id="pause">Pause</span>');
+                pause.click(function () {
+                    slideShow.cycle('pause');
+                    toggleControls();
+                }).insertAfter(slideShow)
+
+                var resume = $('<span id="resume">Resume</span>');
+                resume.click(function () {
+                    slideShow.cycle('resume');
+                    toggleControls();
+                }).insertAfter(slideShow)
+
+                resume.toggle();
+            };
+            
+            var toggleControls = function () {
+                $('#pause').toggle();
+                $('#resume').toggle();
+            };
+        </script>
+
+    </body>
+</html>

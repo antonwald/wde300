@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Throwing Errors</title>
+  </head>
+  <body>
+
+    <script>
+      function increment(n) {
+        if ( typeof n == 'number') {
+          return n + 1;
+        } else {
+          throw new Error("increment(): Argument must be a number");
+         //throw "Error";
+        }
+      }
+
+      console.log(increment(1));
+      try{
+        console.log(increment('one'));
+      } catch(e){
+      	console.log("Ich bin ja doof!");
+      }
+    </script>
+
+  </body>
+</html>

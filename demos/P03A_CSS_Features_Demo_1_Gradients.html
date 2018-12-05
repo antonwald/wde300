@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3 Features - Gradients</title>
+    <style>
+      h3 {
+        font-size: 16px;
+        font-family: sans-serif;
+      }
+      .demo {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+      }
+      .demoImg {
+        display: inline-block;
+        width: 800px;
+        height: 193px;
+        margin: 8px;
+        border: 1px solid #000000;
+      }
+      #box1 {
+        background: -moz-linear-gradient(left, blue, white);
+        background: -webkit-linear-gradient(left, blue, white);
+      }
+      #box2 {
+        background: -moz-linear-gradient(top, blue, white);
+        background: -webkit-linear-gradient(top, blue, white);
+      }
+      #box3 {
+        background: -moz-linear-gradient(0deg, red, white);
+        background: -webkit-linear-gradient(0deg, red, white);
+      }
+      #box4 {
+        background: -moz-linear-gradient(90deg, red, white);
+        background: -webkit-linear-gradient(90deg, red, white);
+      }
+      #box5 {
+        background: -moz-linear-gradient(180deg, red, white);
+        background: -webkit-linear-gradient(180deg, red, white);
+      }
+      #box6 {
+        background: -moz-linear-gradient(270deg, red, white);
+        background: -webkit-linear-gradient(270deg, red, white);
+      }
+      #box7 {
+        background: -moz-linear-gradient(top, blue, white, orange);
+        background: -webkit-linear-gradient(top, blue, white, orange);
+      }
+      #box8 {
+        background: -moz-linear-gradient(top, blue, white 80%, orange);
+        background: -webkit-linear-gradient(top, blue, white 80%, orange);
+      }
+      #box9 {
+        background: -moz-linear-gradient(top, red, orange, yellow, green, blue);
+        background: -webkit-linear-gradient(top, red, orange, yellow, green, blue);
+      }
+      #box10 {
+        background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1)), url(img/bg_landscapeFooter.png);
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1)), url(img/bg_landscapeFooter.png);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <h3>Linear Gradients - Left, Top</h3>
+      <div class="demo" id="box1"></div>
+      <div class="demo" id="box2"></div>
+    </div>
+    <div>
+      <h3>Linear Gradients - 0, 90, 180, 270 Degrees</h3>
+      <div class="demo" id="box3"></div>
+      <div class="demo" id="box4"></div>
+      <div class="demo" id="box5"></div>
+      <div class="demo" id="box6"></div>
+    </div>
+    <div>
+      <h3>Linear Gradients - Color Stops</h3>
+      <div class="demo" id="box7"></div>
+      <div class="demo" id="box8"></div>
+      <div class="demo" id="box9"></div>
+    </div>
+    <div>
+      <h3>Linear Gradients - Transparency</h3>
+      <div class="demoImg" id="box10"></div>
+    </div>
+  </body>
+</html>

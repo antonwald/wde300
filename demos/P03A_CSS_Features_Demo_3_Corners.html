@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3 Features - Corners</title>
+    <style>
+      h3 {
+        font-size: 16px;
+        font-family: sans-serif;
+      }
+      .demo1 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+        background: #79BBFF;
+      }
+      .demo2 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+        background: #A6B779;
+      }
+      .demo3 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+        background: #FBD850;
+      }
+      #box1 {
+        border-radius: 8px;
+      }
+      #box2 {
+        border-radius: 16px;
+      }
+      #box3 {
+        border-radius: 10%;
+      }
+      #box4 {
+        border-radius: 20%;
+      }
+      #box5 {
+        border-radius: 16px/32px;
+      }
+      #box6 {
+        border-radius: 32px/16px;
+      }
+      #box7 {
+        border-radius: 16px 32px;
+      }
+      #box8 {
+        border-radius: 32px 16px;
+      }
+      #box9 {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 32px;
+      }
+      #box10 {
+        border-top-left-radius: 8px 16px;
+        border-top-right-radius: 16px 24px;
+        border-bottom-right-radius: 24px 32px;
+        border-bottom-left-radius: 32px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Border Radius - 8px, 16px, 10%, 20%</h3>
+      <div class="demo1" id="box1"></div>
+      <div class="demo1" id="box2"></div>
+      <div class="demo1" id="box3"></div>
+      <div class="demo1" id="box4"></div>
+    </div>
+
+    <div>
+      <h3>Border Radius - 16px/32px, 32px/16px, 16px 32px, 32px 16px</h3>
+      <div class="demo2" id="box5"></div>
+      <div class="demo2" id="box6"></div>
+      <div class="demo2" id="box7"></div>
+      <div class="demo2" id="box8"></div>
+    </div>
+
+    <div>
+      <h3>Border Radius - mixed settings</h3>
+      <div class="demo3" id="box9"></div>
+      <div class="demo3" id="box10"></div>
+    </div>
+
+  </body>
+</html>

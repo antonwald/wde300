@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Playground</title>
+ <script type="text/javascript" src="/lib/jquery-1.6.4.js"></script>  
+<!--<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  -->
+</head>
+<body>
+
+	<h1>Click me!</h1>
+	<h2>Bla bla bla</h2>
+	<h2>Bla bla bla</h2>
+
+
+	<p>First Paragraph</p>
+	<p class="c1">Second Paragraph</p>
+	<p class="c1" id="p3">Third Paragraph</p>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("h1").click(function() {
+				$("h2").fadeOut();
+			});
+
+			$('p').mouseover(function() {
+				$(this).css('background-color', 'yellow');
+			});
+			$('p').mouseout(function() {
+				$(this).css('background-color', 'white');
+			});
+
+			$(".c1").click(function() {
+				$(this).css('font-weight', 'bold');
+			});
+
+			$("#p3").dblclick(function() {
+				$("p").fadeOut();
+			});
+
+		});
+	</script>
+
+</body>
+</html>

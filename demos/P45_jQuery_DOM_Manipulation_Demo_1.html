@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery DOM Manipulation</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+    </head>
+    <body>
+
+        <p id="p1">
+            We add content here ...
+        </p>
+
+        <button id="button1">
+            Click me!
+        </button>
+        
+        <button id="button2">
+            Click me too!
+        </button>
+
+        <script>
+			$(document).ready(function() {
+			    
+			    var nClick1 = 0;
+			    
+				$('#button1').click(function() {
+					$('#p1').after("<p class='inserted'>Button 1 has been clicked "
+					+ ++nClick1 + " time(s).</p>");
+				})
+				
+				$('#button2').click(function() {
+                    $('#p1').insertAfter($('.inserted').last());
+                    // $('<p>Something new ...</p>').insertAfter($('.inserted').last());
+				})
+				
+			});
+        </script>
+
+    </body>
+</html>

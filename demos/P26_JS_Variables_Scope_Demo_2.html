@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Variable Hoisting</title>
+  </head>
+  <body>
+
+    <script>
+          // Example 1
+      var value1 = 42;
+
+      function test1() {
+      	
+      	var value1;
+      	var i = 0;
+      	
+ 
+        console.log(value1); // undefined
+        if (true) {
+           value1 = 17;
+          console.log(value1); // 17
+        }
+      }
+
+      test1();
+      
+      value1 = 50;
+      test1();
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery DOM Manipulation Security</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+        <style>
+			body * {
+				margin: 2px;
+			}
+        </style>
+    </head>
+    <body>
+
+        <label for="inputField">Enter input!</label>
+        <input type="text" id="inputField" size="80"
+        value="<script>alert(&quot;Happy Hacking!&quot;);</script>" >
+        <br>
+        <button type="button" id="processText">
+            Click me! - text()
+        </button>
+        <button type="button" id="processHtml">
+            Click me! - html()
+        </button>
+        <button type="button" id="processAppend">
+            Click me! - append()
+        </button>
+        <div id="outputArea">
+            Output area
+        </div>
+
+        <script>
+          $(document).ready(function() {
+
+            $("#processText").click(function() {
+              var value = $("#inputField").val()
+              console.log(value);
+              $("#outputArea").text(value);
+            });
+            $("#processHtml").click(function() {
+              var value = $("#inputField").val()
+              console.log(value);
+              $("#outputArea").html(value);
+            });
+            $("#processAppend").click(function() {
+              var value = $("#inputField").val()
+              console.log(value);
+              // $("#outputArea").text(value);
+              $("#outputArea").append(value);
+            });
+
+          });
+        </script>
+
+    </body>
+</html>
+
+<!-- <script>alert("Happy Hacking!");</script> -->

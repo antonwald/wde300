@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript DOM Manipulation 2</title>
+  </head>
+  <body>
+
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+
+    <p>
+      Paragraph 1
+    </p>
+
+    <p id="para2">
+      Paragraph 2
+    </p>
+
+    <p class="info">
+      Paragraph 3
+    </p>
+
+    <p class="info">
+      Paragraph 4
+    </p>
+
+    <p>
+      <h3 class="info">Titel 3</h3>
+    </p>
+
+    <!-- <script src="js/P28_JS_DOM_Manipulation_2.js"></script> -->
+    
+    <script>
+      var header = document.querySelector("h1");
+      header.firstChild.data = "Another dynamic document";
+
+      var para1 = document.querySelector("p");
+      para1.firstChild.data = "This is the first paragraph.";
+
+      var para2 = document.querySelector("#para2");
+      para2.firstChild.data = "This is the second paragraph.";
+
+      var infoParagraphs = document.querySelectorAll(".info");
+      for ( para = 0; para < infoParagraphs.length; para++) {
+        infoParagraphs[para].firstChild.data = "This is an information paragraph.";
+      }
+
+      var title3 = document.querySelector("h3.klass");
+      title3.firstChild.data = "Dynamic";
+      
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Object Oriented Programming - Demo 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Employee() {
+			this.name = "";
+			this.dept = "general";
+			this.status = "permanent";
+		}
+
+		function Manager() {
+			this.reports = [];
+		}
+		Manager.prototype = new Employee;
+
+		function WorkerBee() {
+			this.projects = [];
+			this.salary = 2000;
+		}
+		WorkerBee.prototype = new Employee;
+
+		function SalesPerson() {
+			this.dept = "sales";
+			this.quota = 100;
+		}
+		SalesPerson.prototype = new WorkerBee;
+
+		function Engineer() {
+			this.dept = "engineering";
+			this.machine = "";
+		}
+		Engineer.prototype = new WorkerBee;
+
+		/* var jim = new Employee;
+		console.log("Create: Jim, Employee");
+		console.log("Name: " + jim.name);
+		console.log("Dept: " + jim.dept);
+
+		var sally = new Manager;
+		console.log("Create: Sally, Manager");
+		console.log("Name: " + sally.name);
+		console.log("Dept: " + sally.dept);
+		console.log("Reports: " + sally.reports);
+
+		var marc = new WorkerBee;
+		console.log("Create: Marc, WorkerBee");
+		console.log("Name: " + marc.name);
+		console.log("Dept: " + marc.dept);
+		console.log("Projects: " + marc.projects); */
+		
+		var kathy = new SalesPerson;
+        console.log("Create: Kathy, SalesPerson");
+        console.log("Name: " + kathy.name);
+        console.log("Dept: " + kathy.dept);
+        console.log("Projects: " + kathy.projects);
+        console.log("Quota: " + kathy.quota);
+        console.log("Status: " + kathy.status);
+        console.log("Salary: " + kathy.salary);
+		
+	</script>
+</body>
+</html>

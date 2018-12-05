@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTTP Requests and AJAX</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h3>HTTP Requests and AJAX</h3>
+
+    <p>
+      <b>(1) Synchronous request</b>
+      <button type="button" onclick="fReq1();">
+        Click me!
+      </button>
+      <br>
+      <span id="req1">Will be replaced by request ...</span>
+    </p>
+
+    <p>
+      <b>(2) Asynchronous request</b>
+      <button type="button" onclick="fReq2();">
+        Click me!
+      </button>
+      <br>
+      <span id="req2">Will be replaced by request ...</span>
+    </p>
+
+    <p>
+      <b>(3) Synchronous XML request</b>
+      <button type="button" onclick="fReq3();">
+        Click me!
+      </button>
+      <br>
+      <span id="req3">Will be replaced by request ...</span>
+    </p>
+
+    <p>
+      <b>(4) Asynchronous JSON request</b>
+      <button type="button" onclick="fReq4();">
+        Click me!
+      </button>
+      <br>
+      <span id="req4">Will be replaced by request ...</span>
+    </p>
+
+    <script type="text/javascript">
+      var escapeHTML = function(sText) {
+        var result = "";
+        for (var i = 0; i < sText.length; i++) {
+          if (sText.charAt(i) == "&" && sText.length - i - 1 >= 4 && sText.substr(i, 4) != "&amp;") {
+            result = result + "&amp;";
+          } else if (sText.charAt(i) == "<") {
+            result = result + "&lt;";
+          } else if (sText.charAt(i) == ">") {
+            result = result + "&gt;";
+          } else {
+            result = result + sText.charAt(i);
+          }
+        }
+        return result;
+      };
+
+      var request = new XMLHttpRequest();
+      var serializer = new XMLSerializer();
+
+      // Make a synchronous request
+      var fReq1 = function() {
+        request.onreadystatechange = null;
+        request.open("GET", "files/data.txt", false);
+        request.send(null);
+        console.log(request.getAllResponseHeaders());
+        console.log(request.responseText);
+        var req1 = document.getElementById("req1");
+        req1.innerHTML = "<pre>" + request.responseText + "</pre>";
+      };
+
+      // Make an asynchronous request
+      var fReq2 = function() {
+        
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            console.log("Request status " + request.status + " " + request.statusText);
+            console.log(request.getAllResponseHeaders());
+            console.log(request.responseText);
+            var req2 = document.getElementById("req2");
+            req2.innerHTML = "<pre>" + request.responseText + "</pre>";
+          }
+        };
+        
+        request.open("GET", "files/data.txt", true);
+        request.send(null);
+      };
+
+      // Make a synchronous XML request
+      var fReq3 = function() {
+        request.onreadystatechange = null;
+        request.open("GET", "files/fruit.xml", false);
+        request.send(null);
+        var sXML = request.responseText;
+        // var sXML = request.responseXML;
+        // var sXML = serializer.serializeToString(request.responseXML.documentElement);
+        console.log(sXML);
+        var req3 = document.getElementById("req3");
+        // req3.innerHTML = "<pre>" + sXML + "</pre>";
+        req3.innerHTML = "<pre>" + escapeHTML(sXML) + "</pre>";
+      };
+
+      // Make an asynchronous JSON request
+      var fReq4 = function() {
+        
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            console.log("Request status " + request.status + " " + request.statusText);
+            console.log(request.responseText);
+            // var data = eval("(" + request.responseText + ")"); // Use of eval is not secure
+            var data = JSON.parse(request.responseText);
+            console.log(data["lemon"]);
+            console.log(data.apple.taste);
+            console.log(data["apple"]["taste"]);
+            var req4 = document.getElementById("req4");
+            req4.innerHTML = "<pre>" + request.responseText + "</pre>";
+          }
+        };
+        
+        request.open("GET", "files/fruit.json", true);
+        request.send(null);
+      }
+    </script>
+
+  </body>
+</html>

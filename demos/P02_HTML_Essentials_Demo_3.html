@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML, CSS, and JavaScript</title>
+    <!-- CSS -->
+    <style>
+      #btn1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        color: white;
+        background-color: darkblue;
+      }
+      #btn1:hover {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        color: darkblue;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HTML -->
+    <button type="button" id="btn1">
+      Click me!
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+      var btn1 = document.getElementById("btn1");
+      var flg = true;
+      btn1.onclick = function() {
+        console.log("The button has been clicked.");
+        if (flg) {
+          btn1.innerHTML = "Click me again!";
+          flg = false;
+        } else {
+          btn1.innerHTML = "Just click me!";
+          flg = true;
+        }
+      }
+    </script>
+  </body>
+</html>

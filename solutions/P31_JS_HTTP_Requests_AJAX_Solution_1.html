@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HTTP Requests and AJAX</title>
+<style>
+body {
+	font-family: Arial;
+}
+</style>
+</head>
+<body>
+
+	<h3>HTTP Requests and AJAX</h3>
+
+	<p>
+		<b>Asynchronous Request</b>
+		<button type="button" onclick="fReq();">Click me!</button>
+		<br> <span id="req">Will be replaced by request ...</span>
+	</p>
+
+	<script type="text/javascript">
+		var request = new XMLHttpRequest();
+
+		// Make an asynchronous request
+		var fReq = function() {
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					console.log("Request status " + request.status + " "
+							+ request.statusText);
+					console.log(request.getAllResponseHeaders());
+					console.log(request.responseText);
+					var req2 = document.getElementById("req");
+					req2.innerHTML = request.responseText;
+				}
+			};
+			request.open("GET", "files/data.txt", true);
+			request.send(null);
+		};
+	</script>
+
+</body>
+</html>

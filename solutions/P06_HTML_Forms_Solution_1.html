@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Registration Form</title>
+        <style>
+			fieldset {
+				width: 640px;
+			}
+
+			fieldset ol {
+				list-style: none;
+				padding: 0;
+				margin: 4px;
+			}
+
+			fieldset ol li {
+				padding: 0;
+				margin: 0 0 10px 0;
+			}
+
+			fieldset label {
+				float: left;
+				width: 160px;
+			}
+        </style>
+    </head>
+    <body>
+        <form>
+
+            <fieldset id="registration">
+                <legend>
+                    Create New Account
+                </legend>
+
+                <ol>
+                    <li>
+                        <!-- first name -->
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" type="text" autofocus name="first_name"
+                        placeholder="John">
+                    </li>
+                    <li>
+                        <!-- last name -->
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" type="text" name="last_name" placeholder="Smith">
+                    </li>
+                    <li>
+                        <!-- age -->
+                        <label for="age">Age</label>
+                        <input id="age" type="number" name="age" min="6" max="99"
+                        placeholder="6-99">
+                    <li>
+                        <!-- email -->
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="john@smith.org">
+                    </li>
+                    <li>
+                        <!-- homepage -->
+                        <label for="homepage">Homepage</label>
+                        <input id="homepage" type="url" name="homepage" placeholder="www.smith.org">
+                    </li>
+                    <li>
+                        <!-- password -->
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password"
+                        value="" autocomplete="off" placeholder="8-10 characters" />
+                    </li>
+                    <li>
+                        <!-- password confirmation -->
+                        <label for="password_confirmation">Password Confirmation</label>
+                        <input id="password_confirmation" type="password" name="password_confirmation"
+                        value="" autocomplete="off" placeholder="Repeat password" />
+                    </li>
+                    <li>
+                        <input id="submit" type="submit" value="Register">
+                    </li>
+                </ol>
+            </fieldset>
+
+        </form>
+    </body>
+</html>

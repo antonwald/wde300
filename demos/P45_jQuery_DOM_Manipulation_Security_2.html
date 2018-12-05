@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery DOM Manipulation Security</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+        <!-- <script src="/lib/jquery-1.6.4.js"></script> -->
+        <style>
+			body * {
+				margin: 5px;
+			}
+        </style>
+        <script>
+          $(function() {
+            try {
+              console.log(location.hash)
+              $(location.hash)
+            } catch(e) {
+            }
+          })
+        </script>
+    </head>
+    <body>
+
+        <p>This method allowed an attack at least in version 1.6.1 of jQuery.</p>
+        <p><a href="#<img src='does-not-exist' onerror='alert(&quot;Happy Hacking!&quot;);'>" target="_blank">Click me!</a></p>
+        <p><a href="http://erlend.oftedal.no/blog/?blogid=127">Further Details and Explanation</a></p>
+
+    </body>
+</html>

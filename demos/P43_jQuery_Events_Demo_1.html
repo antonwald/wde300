@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery - Mouse Events</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+      .blue {
+        background-color: #2E6E9E
+      }
+      .yellow {
+        background-color: #FBCB09
+      }
+      .border {
+        width: 90px;
+        height: 90px;
+        border: 5px solid #B03911
+      }
+      .noborder {
+        width: 100px;
+        height: 100px;
+        border: none
+      }
+    </style>
+  </head>
+  <body>
+
+    <h3>Move the mouse in and out the square and click on it!</h3>
+
+    <div id="box1" class="blue border"></div>
+
+    <script>
+      $(document).ready(function() {
+
+        $("#box1").mouseover(function() {
+          $(this).removeClass("blue");
+          $(this).addClass("yellow");
+        });
+
+        $("#box1").mouseout(function() {
+          $("#box1").removeClass("yellow");
+          $("#box1").addClass("blue");
+        });
+
+        $("#box1").toggle(function() {
+          $("#box1").removeClass("border");
+          $("#box1").addClass("noborder");
+        }, function() {
+          $("#box1").removeClass("noborder");
+          $("#box1").addClass("border");
+        });
+
+      });
+    </script>
+  </body>
+</html>

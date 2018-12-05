@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Object Oriented Programming - Demo 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Employee(name, dept) {
+			this.name = name || "";
+			this.dept = dept || "General"
+		}
+
+		function WorkerBee(name, dept, projects) {
+			Employee.call(this, name, dept);
+			this.projects = projects || [];
+		}
+		WorkerBee.prototype = new Employee;
+
+		function Engineer(name, projects, machine) {
+			WorkerBee.call(this, name, "Engineering", projects)
+			this.machine = machine || "";
+		}
+		Engineer.prototype = new WorkerBee;
+
+		var jim = new Employee("Jim");
+		console.log("Create: Jim, Employee");
+		console.log("Name: " + jim.name);
+		console.log("Dept: " + jim.dept);
+
+		var marc = new WorkerBee("Mark", "Accounting", [ "Blue", "Yellow" ]);
+		console.log("Create: Marc, WorkerBee");
+		console.log("Name: " + marc.name);
+		console.log("Dept: " + marc.dept);
+		console.log("Projects: " + marc.projects);
+
+		var kent = new Engineer("Kent", [ "Orange", "Green" ], "Drill");
+		console.log("Create: Kent, Engineer");
+		console.log("Name: " + kent.name);
+		console.log("Dept: " + kent.dept);
+		console.log("Projects: " + kent.projects);
+		console.log("Machine: " + kent.machine);
+
+		// Adding to the prototype
+		Employee.prototype.specialty = "None";
+		console.log("Worker Bee Marc's Specialty: " + marc.specialty);
+
+		Employee.prototype.profile = function() {
+			console.log("Employee " + this.name + " is working in the "
+					+ this.dept + " department");
+		}
+		kent.profile();
+	</script>
+</body>
+</html>

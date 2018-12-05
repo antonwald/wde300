@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JavaScript Events</title>
+	</head>
+	<body>
+		<!-- HTML Events -->
+		<button type="button" id="button1" onclick="alert('Hello world 1!')">
+			Click Me 1!
+		</button>
+		<br>
+		<!-- DOM Level 0 -->
+		<button type="button" id="button2">
+			Click Me 2!
+		</button>
+		<br>
+		<script>
+			var button2 = document.getElementById("button2")
+			button2.onclick = function() {
+				alert('Hello world 2!');
+				var i = 1;
+				console.log(i);
+				button2.innerText = "Angeklickt";
+			};
+		
+		</script>
+		<!-- DOM Level 2 -->
+		<button type="button" id="button3">
+			Click Me 3!
+		</button>
+		<br>
+		<script>
+			var button3 = document.getElementById("button3")
+			button3.addEventListener('click', function(event) {
+				alert('Hello world 3!');
+			}, false);
+			button3.addEventListener('click', function(event) {
+				button3.innerHTML = "I was clicked!";
+			}, false);
+		</script>
+	</body>
+</html>

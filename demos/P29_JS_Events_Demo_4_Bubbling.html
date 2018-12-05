@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript Event Bubbling</title>
+  </head>
+  <body>
+
+    <div id="container1">
+      <table id="container2" border="1">
+        <tr>
+          <td>One</td>
+          <td>Two</td>
+        </tr>
+        <tr id="container3">
+          <td>Three</td>
+          <td id="container4">
+          <button type="button" id="button1">
+            Click me!
+          </button></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      var but1 = document.getElementById('button1');
+      but1.addEventListener('click', function(event) {
+        console.log("Event handler for button 1 (button itself)");
+        // event.cancelBubble = true;
+      });
+      var cnt4 = document.getElementById('container4');
+      cnt4.addEventListener('click', function(event) {
+        console.log("Event handler for container 4 (table cell)");
+        // event.cancelBubble = true;
+      });
+      var cnt3 = document.getElementById('container3');
+      cnt3.addEventListener('click', function(event) {
+        console.log("Event handler for container 3 (table row)");
+        event.cancelBubble = true;
+      });
+      var cnt2 = document.getElementById('container2');
+      cnt2.addEventListener('click', function(event) {
+        console.log("Event handler for container 2 (table)");
+        // event.cancelBubble = true;
+      });
+      var cnt1 = document.getElementById('container1');
+      cnt1.addEventListener('click', function(event) {
+        console.log("Event handler for container 1 (div)");
+        // event.cancelBubble = true;
+      });
+
+    </script>
+
+  </body>
+</html>

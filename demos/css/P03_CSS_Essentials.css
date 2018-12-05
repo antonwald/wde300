@@ -1,0 +1,39 @@
+/* Universal Selector */
+
+* {
+	background-color: #E0E0E0;
+	margin-top: 0px;
+	margin-right: 0px;
+}
+
+/* Type Selector */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ID Selector */
+
+#mainHeader {
+	text-decoration: underline;
+}
+
+/* Class Selector */
+
+.topNavigation {
+	color: #808000;
+	font-weight: bold;
+}
+
+/* Descendant Selector */
+
+footer p {
+	color: #008080;
+	font-weight: bold;
+}
+
+/* Mouseover Effect */
+
+p:hover {
+	color: #2694E8;
+}

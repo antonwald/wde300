@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery AJAX</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+    </head>
+    <body>
+        <h3>jQuery AJAX</h3>
+
+        <p>
+            <button type="button" id="loadData">
+                Load Data
+            </button>
+            <button type="button" id="loadJSON">
+                Load JSON
+            </button>
+            <button type="button" id="loadXML">
+                Load XML
+            </button>
+            <button id="loadFruits">
+                Load Fruits
+            </button>
+            <button id="loadVegetables">
+                Load Vegetables
+            </button>
+        </p>
+
+        <div id="outputArea">
+            (Output Area)
+        </div>
+
+        <script>
+          var escapeHTML = function(sText) {
+            var result = "";
+            for (var i = 0; i < sText.length; i++) {
+              if (sText.charAt(i) == "&" && sText.length - i - 1 >= 4 && sText.substr(i, 4) != "&amp;") {
+                result = result + "&amp;";
+              } else if (sText.charAt(i) == "<") {
+                result = result + "&lt;";
+              } else if (sText.charAt(i) == ">") {
+                result = result + "&gt;";
+              } else {
+                result = result + sText.charAt(i);
+              }
+            }
+            return result;
+          };
+
+          $(document).ready(function() {
+
+            $("#loadData").click(function() {
+              $.get("files/data.txt", function(data) {
+                console.log(data);
+              });
+              $("#outputArea").load("files/data.txt");
+            });
+
+            $("#loadJSON").click(function() {
+              $.get("files/fruit.json", function(data) {
+                console.log(data);
+              });
+              $("#outputArea").load("files/fruit.json");
+            });
+
+            $("#loadXML").click(function() {
+              $.get("files/fruit.xml", function(data) {
+                var serializer = new XMLSerializer();
+                var sXML = serializer.serializeToString(data);
+                console.log(sXML);
+                $("#outputArea").text(sXML);
+              });
+            });
+
+            $("#loadFruits").click(function() {
+              $("#outputArea").load("files/data.html #fruits");
+            });
+
+            $("#loadVegetables").click(function() {
+              $("#outputArea").load("files/data.html #vegetables");
+            });
+          });
+        </script>
+    </body>
+</html>

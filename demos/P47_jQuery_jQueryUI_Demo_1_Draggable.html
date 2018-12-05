@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery UI - Draggable Text</title>
+    <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="/lib/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery-ui-1.8.20.custom.min.js"></script>
+    <style>
+      #dragThis {
+        width: 240px;
+        height: 40px;
+        padding: 10px 10px 10px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border: #1D5987 solid 2px;
+        background-color: #A6C9E2;
+      }
+      #dropHere {
+        position: absolute;
+        left: 8px;
+        top: 100px;
+        width: 320px;
+        height: 240px;
+        border: #1D5987 solid 2px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p id="dragThis">
+      Drag me into the box!
+    </p>
+
+    <div id="dropHere"></div>
+
+    <script>
+      $(document).ready(function() {
+
+        $("#dragThis").draggable();
+        $("#dropHere").droppable({
+          drop : function(event, ui) {
+            ui.draggable.html("Bye for now!").fadeOut(5000);
+          }
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

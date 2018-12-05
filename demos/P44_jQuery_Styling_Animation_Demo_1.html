@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Styling and Animation</title>
+        <link href="css/P44_jQuery_Styling_Animation.css" rel="stylesheet" media="all" />
+        <script src="/lib/jquery-1.6.4.js"></script>
+    </head>
+    <body>
+
+        <p id="para1">Click paragraph 1!</p>
+        <p id="para2">Click paragraph 2!</p>
+        <p id="para3">Click paragraph 3!</p>
+        <p id="para4">Click paragraph 4!</p>
+        <div>
+            Box 1
+        </div>
+        <div>
+            Box 2
+        </div>
+        <div>
+            Box 3
+        </div>
+
+        <script>
+			$(document).ready(function() {
+
+				$('#para1').click(function() {
+					console.log('Paragraph 1 has been clicked ...');
+					// $(this).css('background-color', 'yellow');
+					$(this).css({
+						backgroundColor : 'yellow',
+						fontWeight : 'bold'
+					});
+				});
+
+				$('#para2').click(function() {
+					console.log('Paragraph 2 has been clicked ...');
+					$(this).hide('slow');
+					$('#para3').show('slow');
+				});
+
+				$('#para3').click(function() {
+					console.log('Paragraph 3 has been clicked ...');
+					$(this).hide('slow');
+					$('#para2').show('slow');
+				});
+
+				$('#para4').click(function() {
+					console.log('Paragraph 4 has been clicked ...');
+					if ($("div:first").is(":hidden")) {
+						$("div").slideDown("slow");
+					} else {
+						$("div").hide();
+					}
+				});
+
+			});
+        </script>
+    </body>
+</html>

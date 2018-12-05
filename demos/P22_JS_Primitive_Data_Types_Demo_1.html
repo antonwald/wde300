@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript - Primitive Data Types</title>
+    </head>
+    <body>
+        <script>
+			/* ----- Comments and Variables ----- */
+			// this is a comment
+
+			/* this is a
+			block comment */
+
+			// variable declaration
+			var iMyVariable = 12;
+
+			// multi variable declaration
+			var iVar1 = 0, sVar2 = "Hello";
+
+			/* ----- Basic Data Types ----- */
+			// string
+			var sVar = "Hello World";
+			var sVarAlt = 'Hello World';
+
+			// number (integer && float)
+			var iVar = 1234;
+			var fVar = 12.34;
+
+			// boolean
+			var bVar = true;
+
+			// null && undefined
+			var vNull = null;
+			var vUndefined = undefined;
+
+			/* ----- Basic Data Types - String(1) ----- */
+			// string
+			var sVar = "Hello World";
+			var sVarAlt = 'Hello World';
+
+			// string escaping
+			var sEsc = "Hello \"World\"";
+			// Hello "World"
+
+			// string with a newline
+			var sNL = "Hello\nWorld";
+			// Hello
+			// World
+
+			/* ----- Basic Data Types - String(2) ----- */
+			// string operations
+			var sText = "test string";
+			console.log(sText.length);
+			// 11
+			console.log(sText.substring(5, 7));
+			// "st"
+			console.log(sText.charAt(5));
+			// "s"
+			console.log(sText.indexOf("s"));
+			// 2
+
+			// string separation
+			var sNames = "Peter,Tim,Frank,Andreas";
+			var aNames = sNames.split(",");
+			// "Peter", "Tim", "Frank", "Andreas"
+
+			// string transformation
+			console.log("JavaScript".toUpperCase());
+			// JAVASCRIPT
+
+			/* ----- Basic Data Types / Object Representation ----- */
+			// string + string object
+			var sString = "Hello World";
+			var oString = new String("Hello World");
+			var ooString = new Object("Hello World");
+
+			// number + number object
+			var iInt = 1234;
+			var oInt = new Number(1234);
+			var ooInt = new Object(1234);
+			var fFloat = 12.34;
+			var oFloat = new Number(12.34);
+			var ooFloat = new Object(12.34);
+
+			// boolean + boolean object
+			var bBool = true;
+			var oBool = new Boolean(true);
+			var ooBool = new Object(true);
+        </script>
+    </body>
+</html>

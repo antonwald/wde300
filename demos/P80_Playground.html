@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AJAX</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+    </style>
+  </head>
+
+  <body>
+
+    <div id="out"></div>
+    <button type="button" id="load">
+      Load
+    </button>
+
+    <script>
+      $(document).ready(function() {
+
+        $('#load').click(function() {
+          console.log('click');
+          $.get('files/data.txt', function(data) {
+            console.log(data);
+            $('#out').html(data);
+          }, 'html');
+         // $('#out').load('files/data.txt');
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

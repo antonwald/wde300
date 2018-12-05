@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Object Oriented Programming</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// --- Shape
+		function Shape(centerX, centerY) {
+			this.centerX = centerX || 0.0;
+			this.centerY = centerY || 0.0;
+		}
+		Shape.prototype.info = function() {
+			console.log("The center of the shape is at (" + this.centerX + ","
+					+ this.centerY + ")");
+		};
+
+		// --- Circle
+		function Circle(centerX, centerY, radius) {
+			Shape.call(this, centerX, centerY);
+			this.radius = radius || 1;
+		}
+		Circle.prototype = new Shape;
+		Circle.prototype.area = function() {
+			console.log("The area of the circle is " + Math.PI * this.radius
+					* this.radius);
+		};
+		Circle.prototype.info = function() {
+			console.log("Overwritten");
+		};
+
+		// --- Square
+		function Square(centerX, centerY, sideLength) {
+			Shape.call(this, centerX, centerY);
+			this.sideLength = sideLength || 1;
+		}
+		Square.prototype = new Shape;
+		Square.prototype.area = function() {
+			console.log("The area of the square is " + this.sideLength
+					* this.sideLength);
+		};
+
+		// --- Examples
+		var shape1 = new Shape();
+		shape1.info();
+
+		var circle1 = new Circle();
+		circle1.info();
+		circle1.area();
+
+		/* Circle.prototype.info = function() {
+			console.log("The center of the circle is at (" + this.centerX + ","
+					+ this.centerY + ") and it's radius is " + this.radius);
+
+		};
+		
+		var circle2 = new Circle();
+		circle2.info(); */
+
+		var square1 = new Square(1, 1, 2);
+		square1.info();
+		square1.area();
+	</script>
+</body>
+</html>

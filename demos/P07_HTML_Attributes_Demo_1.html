@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Custom Data Attributes</title>
+</head>
+<body>
+    
+	<ul>
+		<li class="user" data-name="John Resig" data-city="Boston"
+			data-lang="JavaScript" data-food="Bacon"><b>John says: </b><span id="idSpan">Hello,
+				how are you?</span></li>
+	</ul>
+	
+	<script>
+		var user = document.getElementsByTagName("li")[0];
+		var pos = 0, span = user.getElementsByTagName("span")[0];
+
+		var phrases = [ {
+			name : "city",
+			prefix : "I am from "
+		}, {
+			name : "food",
+			prefix : "I like to eat "
+		}, {
+			name : "lang",
+			prefix : "I like to program in "
+		} ];
+
+		user.addEventListener("click", function() {
+			var phrase = phrases[pos];
+			// Use the .dataset property
+			span.innerHTML = phrase.prefix + user.dataset[phrase.name];
+			pos = ++pos % 3;
+		}, false);
+	</script>
+	
+</body>
+</html>

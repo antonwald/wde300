@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Error Handling</title>
+</head>
+<body>
+	<script>
+		/* -- Option 1 -- */
+		/* try {
+			// new Array(-20);
+			// var obj = x;
+			// eval("a ++ b");
+			new 10;
+		} catch (e) {
+			console.log(e);
+			switch (e.name) {
+			case ('RangeError'):
+				console.log("This was a range error, since " + e.message);
+				break;
+			case ('ReferenceError'):
+				console.log("This was a reference error, since " + e.message);
+				break;
+			case ('SyntaxError'):
+				console.log("This was a syntax error, since " + e.message);
+				break;
+			case ('TypeError'):
+				console.log("This was a type error, since " + e.message);
+				break;
+			default:
+				console.log("This was an unknown error, since " + e.message);
+			}
+		} finally {
+			console.log("Finally, we have arrived here!")
+		} */
+
+		/* -- Option 2 -- */
+		try {
+			new Array(-20);
+			// var obj = x;
+			// eval("a ++ b");
+			// new 10;
+		} catch (e) {
+			console.log(e);
+			switch (true) {
+			case (e instanceof RangeError):
+				console.log("This was a range error, since " + e.message);
+				break;
+			case (e instanceof ReferenceError):
+				console.log("This was a reference error, since " + e.message);
+				break;
+			case (e instanceof SyntaxError):
+				console.log("This was a syntax error, since " + e.message);
+				break;
+			case (e instanceof TypeError):
+				console.log("This was a type error, since " + e.message);
+				break;
+			default:
+				console.log("This was an unknown error, since " + e.message);
+			}
+		} finally {
+			console.log("Finally, we have arrived here!")
+		}
+	</script>
+</body>
+</html>

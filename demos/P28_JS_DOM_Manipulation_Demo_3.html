@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+    <style>
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <p>
+      Paragraph 1
+    </p>
+    <p>
+      Paragraph 2
+    </p>
+    <p>
+      Paragraph 3
+    </p>
+    <p>
+      Paragraph 4
+    </p>
+
+    <button id="alignButton" type="button">
+      Right align!
+    </button>
+
+    <script>
+      var oBtn = null;
+      oBtn = document.querySelector("#alignButton");
+
+      function makeHandler(someText) {
+        return function() {
+          console.log(someText);
+        }
+      }
+
+
+      oBtn.onclick = function() {
+
+        var aPara = document.getElementsByTagName("p");
+        var oAttr;
+        var oElem;
+        var sText;
+
+        for ( n = 0; n < aPara.length; n++) {
+          oElem = aPara[n];
+          oAttr = document.createAttribute("align");
+          oAttr.nodeValue = "center";
+          oElem.setAttributeNode(oAttr);
+          oAttr = document.createAttribute("class");
+          oAttr.nodeValue = "yellow";
+          oElem.setAttributeNode(oAttr);
+
+          sText = oElem.firstChild.textContent;
+
+          oElem.onclick = makeHandler(sText);
+        }
+
+      };
+
+    </script>
+
+  </body>
+</html>

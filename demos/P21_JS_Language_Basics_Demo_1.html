@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript Language Basics</title>
+    </head>
+    <body>
+        <!-- Script File -->
+        <script src="js/P21_JS_Language_Basics.js"></script>
+
+        <!-- Embedded Script -->
+        <script>
+        // Single Object
+        var oLeer = {};
+        var oObject = {
+        	name : "Anton",
+        	currentDate: new Date(),
+        	sayHello: function(){
+        		console.log("Hallo, " + this.name);
+        	}
+        };
+        
+        oObject.sayHello();
+        
+        // Create prototype to create several objects out of it
+        function Employee(sName){
+        	this.name = sName;
+        }
+        
+        Employee.prototype.sayHello = function(){
+        	console.log("Hallo, " + this.name);
+        }
+        
+        var oAnton = new Employee("Anton");
+        var oMario = new Employee("Mario");
+        
+        oAnton.sayHello();
+        oMario.sayHello();
+        
+        
+        
+        </script>
+    </body>
+</html>

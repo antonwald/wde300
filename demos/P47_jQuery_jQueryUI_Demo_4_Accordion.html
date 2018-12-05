@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery UI - Accordion</title>
+        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+        <script type="text/javascript" src="/lib/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="/lib/jquery-ui-1.8.20.custom.min.js"></script>
+    </head>
+    <body>
+
+        <div id="accordion">
+            <h3><a href="#">First Stanza</a></h3>
+            <div>
+                It is an ancient Mariner,
+                <br>
+                And he stoppeth one of three.
+                <br>
+                "By thy long grey beard and glittering eye,
+                <br>
+                Now wherefore stopp'st thou me?
+
+            </div>
+            <h3><a href="#">Second Stanza</a></h3>
+            <div>
+                "The Bridegroom's doors are opened wide,
+                <br>
+                And I am next of kin;
+                <br>
+                The guests are met, the feast is set:
+                <br>
+                May'st hear the merry din."
+            </div>
+            <h3><a href="#">Third Stanza</a></h3>
+            <div>
+                He holds him with his skinny hand,
+                <br>
+                "There was a ship," quoth he.
+                <br>
+                "Hold off! unhand me, grey-beard loon!"
+                <br>
+                Eftsoons his hand dropt he.
+            </div>
+        </div>
+
+        <script>
+          $(document).ready(function() {
+
+            $("#accordion").accordion();
+
+          })
+        </script>
+
+    </body>
+</html>

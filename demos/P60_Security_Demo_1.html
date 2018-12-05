@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Security - Demo 1 - Cross Site Scripting by DOM Manipulation</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h3>Search Mask</h3>
+
+    <p>
+      <input type="text" id="searchField" size="80">
+      <button type="button" id="searchButton">
+        Search!
+      </button>
+    </p>
+
+    <p>
+      You searched for: <span id="searchDisplay"></span>
+    </p>
+
+    <script>
+      $(document).ready(function() {
+
+        $("#searchButton").click(function() {
+          var value = $("#searchField").val();
+          $("#searchDisplay").html(value);
+          // $("#searchDisplay").text(value);
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
+
+<!-- <script>alert("Happy Hacking!");</script> -->

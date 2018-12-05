@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript - Primitive Data Types</title>
+  </head>
+  <body>
+    <script>
+      var alphabet = String("abcdefghijklmnopqrstuvwxyz");
+
+      var offset = 1;
+
+      var startCode = String("a").charCodeAt(0);
+      console.log(startCode);
+
+      var newCode;
+      var newAlphabet = "";
+
+      for (var i = 0; i < alphabet.length; i++) {
+        newCode = startCode + (alphabet.charCodeAt(i) - startCode + offset) % 26;
+        newAlphabet += String.fromCharCode(newCode);
+      }
+
+      console.log(newAlphabet);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript - Reference Types</title>
+    </head>
+    <body>
+        <script>
+          var fruits = ["Banana", "Apple", "Plum", "Cherry"];
+
+          function insertAfter(arr, elem, data) {
+            var pos = arr.indexOf(elem); // index starts at 0 -> by splcie always + 1
+            if (pos > -1) { // check if element found
+              for (var i = 0; i < data.length; i++) // add new values not as array but element by element
+                arr.splice(pos + i + 1, 0, data[i]);
+            }
+            return arr;
+          }
+
+          console.log(insertAfter(fruits, "Apple", ["Melon", "Lemon"]));
+          
+          // ["Banana", "Apple", "Melon", "Lemon", "Plum", "Cherry"]
+        </script>
+    </body>
+</html>

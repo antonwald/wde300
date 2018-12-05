@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript - Statements</title>
+    </head>
+    <body>
+        <script>
+			var fruit = {
+				name : "banana",
+				color : "yellow",
+				origin : "Puerto Rico",
+				weight : 230,
+				size : 17
+			};
+			var aFruit = [];
+
+			// var i = 0; for (aFruit[i++] in fruit);
+			
+			for (var p in fruit) {
+				console.log(p + ": " + fruit[p]);
+				aFruit.push(fruit[p]);
+			}
+			
+			console.log(aFruit);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3 Features - Shadows</title>
+    <style>
+      h3 {
+        font-size: 16px;
+        font-family: sans-serif;
+      }
+      .demo1 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+        background: #79BBFF;
+      }
+      .demo2 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+        background: #A6B779;
+      }
+      .demo3 {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        margin: 8px;
+        border: 1px solid #000000;
+      }
+      #box1 {
+        box-shadow: 8px 8px;
+      }
+      #box2 {
+        box-shadow: 8px 8px lightgrey;
+      }
+      #box3 {
+        box-shadow: 8px 8px 4px;
+      }
+      #box4 {
+        box-shadow: 8px 8px 4px lightgrey;
+      }
+      #box5 {
+        box-shadow: 8px 8px 0px 4px;
+      }
+      #box6 {
+        box-shadow: 8px 8px 0px 4px lightgrey;
+      }
+      #box7 {
+        box-shadow: 8px 8px 4px 4px;
+      }
+      #box8 {
+        box-shadow: 8px 8px 4px 4px lightgrey;
+      }
+      #box9 {
+        box-shadow: 0px 0px 4px cyan;
+      }
+      #box10 {
+        box-shadow: inset 0px 0px 4px cyan;
+      }
+      #box11:hover {
+        box-shadow: 0px 0px 4px cyan;
+      }
+      #box12:hover {
+        box-shadow: inset 0px 0px 4px cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Box Shadow - Color and Blur</h3>
+      <div class="demo1" id="box1"></div>
+      <div class="demo1" id="box2"></div>
+      <div class="demo1" id="box3"></div>
+      <div class="demo1" id="box4"></div>
+    </div>
+    <div>
+      <h3>Box Shadow - Spread and Blur</h3>
+      <div class="demo2" id="box5"></div>
+      <div class="demo2" id="box6"></div>
+      <div class="demo2" id="box7"></div>
+      <div class="demo2" id="box8"></div>
+    </div>
+    <div>
+      <h3>Box Shadow - No Offset and Inset </h3>
+      <div class="demo3" id="box9"></div>
+      <div class="demo3" id="box10"></div>
+      <div class="demo3" id="box11"></div>
+      <div class="demo3" id="box12"></div>
+    </div>
+  </body>
+</html>

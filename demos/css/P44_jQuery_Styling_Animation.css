@@ -1,0 +1,17 @@
+p {
+	width: 200px;
+}
+
+#para3 {
+	display: none;
+}
+
+div {
+	background: #de9a44;
+	margin: 3px;
+	padding: 3px;
+	width: 80px;
+	height: 40px;
+	display: none;
+	float: left;
+}

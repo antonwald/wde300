@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery - Introduction</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 20px;
+      }
+      #btn {
+        position: absolute;
+        top: 240px;
+        left: 25px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Animated Box -->
+    <div id="box"></div>
+
+    <!-- Push Button -->
+    <button type="button" id="btn">
+      Click me!
+    </button>
+
+    <script>
+
+      /*
+       * (1. Add the jQuery call when the page (i.e. the document) is ready)
+       *  2. Add a Boolean variable which tracks the visibility of the box
+       *  3. Add a click handler for the push button
+       *  4. If the box is visible, let it fade out and set the visibility to false
+       *  5. If the box is hidden, let it fade in and set the visibility to true
+       */
+
+      $(document).ready(function() {
+        // ... your code goes here ...
+      });
+
+    </script>
+  </body>
+</html>

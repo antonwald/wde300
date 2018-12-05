@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Security - Demo 2 - Calculator with Cross Site Scripting</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <label for="inp1">Enter an expression:</label>
+    <input id="inp1" type="text" size="80" value="bla bla bla">
+
+    <p id="para1">
+      Result display
+    </p>
+
+    <button type="button" id="btn1">
+      Display using innerHTML
+    </button>
+
+    <script>
+      var i1 = document.getElementById("inp1");
+      var p1 = document.getElementById("para1");
+      var b1 = document.getElementById("btn1");
+
+      b1.onclick = function() {
+        p1.innerHTML = eval(i1.value);
+      }
+
+    </script>
+
+  </body>
+</html>
+
+<!-- alert("Happy Hacking!"); -->

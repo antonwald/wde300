@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Styling and Animation</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+        <style>
+			#container {
+				width: 320px;
+				height: 240px;
+				padding: 4px;
+				border: #1D5987 2px solid;
+			}
+			button {
+				margin: 4px;
+			}
+			#poem {
+				margin: 4px;
+				font: 12px arial;
+			}
+        </style>
+    </head>
+    <body>
+
+        <div id="container">
+            <button id="smaller">
+                Smaller
+            </button>
+            <button id="larger">
+                Larger
+            </button>
+            <p id="poem"> 'Tweedledum and Tweedledee
+                <br>
+                Agreed to have a battle;
+                <br>
+                For Tweedledum said Tweedledee
+                <br>
+                Had spoiled his nice new rattle.
+                <br>
+                Just then flew down a monstrous crow,
+                <br>
+                As black as a tar-barrel;
+                <br>
+                Which frightened both the heroes so,
+                <br>
+                They quite forgot their quarrel.' </p>
+        </div>
+
+        <script>
+			$(document).ready(function() {
+
+				$("#smaller").click(function() {
+					// var sFontSize = ...
+					// var iFontSize = Number(sFontSize.match(/\d+/)[0]);
+					// More to implement here ...
+				})
+				$("#larger").click(function() {
+					// var sFontSize = ...
+					// var iFontSize = Number(sFontSize.match(/\d+/)[0]);
+					// More to implement here ...
+				})
+			});
+        </script>
+    </body>
+</html>

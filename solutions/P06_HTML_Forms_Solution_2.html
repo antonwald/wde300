@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Registration Form</title>
+   
+    <style>
+      body, div, h1, form, fieldset, input, textarea {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        background: #728EAA;
+        background: -moz-linear-gradient(top, #25303C, #728EAA);
+        background: -webkit-linear-gradient(top, #25303C, #728EAA);
+        font-family: sans-serif;
+      }
+
+      form {
+        width: 640px;
+        margin: 60px auto;
+        padding: 60px 30px;
+        background: #C9D0DE;
+        border: 1px solid #E1E1E1;
+        box-shadow: 8px 8px 16px #444;
+      }
+
+      fieldset legend {
+        font-size: 35px;
+        color: #445668;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 35px 0;
+        text-shadow: 1px 1px 0px #F2F2F2;
+      }
+      
+	   fieldset ol {
+		list-style: none;
+		padding: 0;
+		margin: 4px;
+		}
+
+	   fieldset ol li {
+		padding: 0;
+		margin: 0 0 10px 0;
+		}      
+
+       label {
+        float: left;
+        clear: left;
+        margin: 11px 20px 0 0;
+        width: 10em;
+        text-align: right;
+        font-size: 16px;
+        color: #445668;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0px #F2F2F2;
+      }
+
+       input {
+        width: 260px;
+        height: 35px;
+        padding: 5px 20px 0px 20px;
+        margin: 0 0 20px 0;
+        background: #5E768D;
+        background: -moz-linear-gradient(top, #546A7F 0%, #5E768D 20%);
+        background: -webkit-linear-gradient(top, #546A7F 0%, #5E768D 20%);
+        border-radius: 5px;
+        box-shadow: 1px 1px 0px #F2F2F2;
+        font-family: sans-serif;
+        font-size: 16px;
+        color: #f2f2f2;
+        text-transform: uppercase;
+        text-shadow: -1px -1px 0px #334f71;
+      }
+
+      input:-webkit-input-placeholder {
+        color: #a1b2c3;
+        text-shadow: -1px -1px 0px #38506b;
+      }
+
+      input:-moz-placeholder {
+        color: #a1b2c3;
+        text-shadow: -1px -1px 0px #38506b;
+      }
+
+      input:focus, textarea:focus {
+        background: #728eaa;
+        background: -moz-linear-gradient(top, #668099 0%, #728eaa 20%);
+        background: -webkit-linear-gradient(top, #668099 0%, #728eaa 20%);
+      }
+
+      input[type=submit] {
+        width: 185px;
+        height: 52px;
+        float: right;
+        padding: 10px 15px;
+        margin: 0 15px 0 0;
+        box-shadow: 0px 0px 5px #999;
+        border: 1px solid #556f8c;
+        background: -moz-linear-gradient(top, #718DA9 0%, #415D79 100%);
+        background: -webkit-linear-gradient(top, #718DA9 0%, #415D79 100%);
+        cursor: pointer;
+      }
+
+    </style>
+    </head>
+    <body>
+        <form>
+            <fieldset id="registration">
+                <legend>
+                    Create New Account
+                </legend>
+
+                <ol>
+                    <li>
+                        <!-- first name -->
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" type="text" autofocus name="first_name" placeholder="John">
+                    </li>
+                    <li>
+                        <!-- last name -->
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" type="text" name="last_name" placeholder="Smith">
+                    </li>
+                    <li>
+                        <!-- age -->
+                        <label for="age">Age</label>
+                        <input id="age" type="number" name="age" min="6" max="99"
+                        placeholder="6-99">
+                    <li>
+                        <!-- email -->
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="john@smith.org">
+                    </li>
+                    <li>
+                        <!-- homepage -->
+                        <label for="homepage">Homepage</label>
+                        <input id="homepage" type="url" name="homepage" placeholder="www.smith.org">
+                    </li>
+                    <li>
+                        <!-- password -->
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" value="" autocomplete="off" placeholder="8-10 characters" />
+                    </li>
+                    <li>
+                        <!-- password confirmation -->
+                        <label for="password_confirmation">Password Confirmation</label>
+                        <input id="password_confirmation" type="password" name="password_confirmation" value="" autocomplete="off" placeholder="Repeat password" />
+                    </li>
+                    <li>
+                        <input id="submit" type="submit" value="Register">
+                    </li>
+                </ol>
+            </fieldset>
+
+        </form>
+    </body>
+</html>

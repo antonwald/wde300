@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript - Variables and Scope</title>
+  </head>
+  <body>
+    <script>
+    
+      function makeAdder(n) {
+        return function(x) {
+          return n + x;
+        }
+      }
+
+      var add1 = makeAdder(1);
+      var add3 = makeAdder(3);
+      var add7 = makeAdder(7);
+
+      console.log(add1(2));
+      // 3
+      console.log(add3(2));
+      // 5
+      console.log(add7(2));
+      // 9
+    </script>
+  </body>
+</html>

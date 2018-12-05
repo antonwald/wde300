@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Deferred Object - NotifyWith</title>
+        <script src="/lib/jquery-1.7.2.min.js"></script>
+    </head>
+    <body>
+
+        <p id="output">Progess .. </p>
+        <button type="button" id="notify1">
+            Notify!
+        </button>
+        <button type="button" id="notify2">
+            NotifyWith!
+        </button>
+
+        <script>
+          $(document).ready(function() {
+            var dfd = $.Deferred();
+            dfd.text = "dfd own text "
+            dfd.progress(function(msg) {
+              $("#output").append(this.text + msg);
+            });
+
+            $("#notify1").click(function() {
+              dfd.notify("button notify clicked .. ");
+            });
+
+            $("#notify2").click(function() {
+              dfd.notifyWith({
+                text : "foreign text "
+              }, ["button notify clicked .. "]);
+            });
+          });
+        </script>
+
+    </body>
+</html>

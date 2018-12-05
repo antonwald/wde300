@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript - OOP Simple Example</title>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <script>
+      function Pizza() {
+        this.name = "Plain";
+      }
+
+
+      Pizza.prototype.sayGreeting = function() {
+        console.log("Hello, my name is " + this.name + "!");
+      };
+
+      function Margherita() {
+        this.name = "Margherita";
+      }
+
+      // "Prototype Chaining"
+      // Margherita.prototype = Pizza.prototype;
+      Margherita.prototype = new Pizza();
+      Margherita.prototype.sayGreeting = function() {
+        console.log("Viva Italia!");
+      }
+      var p1 = new Pizza();
+      p1.sayGreeting();
+
+      var m1 = new Margherita();
+      m1.sayGreeting();
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Basic HTML 5 Page Template</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+  </head>
+  <body>
+
+    <ul id="list"></ul>
+
+    <button id="btn">Lade Daten</button>
+    
+    <script>
+   /*  $(function() {
+    	$("#btn").click(function() {
+    	 $("#list").append($("<li>").append($("<a>").attr("href",
+    			"http://www.jquery.com/").text(
+    					"jQuery"))).append(
+    			$("<li>").append($("<a>").attr("href",
+    		    "http://docs.jquery.com/Downloading_jQuery").text(
+    					"jQuery Downloads"))).append(
+    			$("<li>").append($("<a>").attr("href",
+    			"http://plugins.jquery.com/").text(
+    					"jQuery Plugins"))); 
+     });
+     }); */
+     
+   // Daten aus .json Datei
+   $(function(){
+	   $("#btn").click(function() {
+		   $.getJSON('files/datei.json',function(data) {
+			  $("#list").empty(); 
+			  $.each(data, function(index, inhalt){
+				 $("#list").append($("<li>").append($("<a>").attr(
+				 "href", inhalt.url).text(inhalt.text)));
+			  })
+		   })
+	   })
+   })
+    </script>
+  </body>
+</html>

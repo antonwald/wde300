@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery DOM Manipulation</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+    </head>
+    <body>
+
+        <button id="btn1" type="button">
+            Click me!
+        </button>
+
+        <p>Press the button to list the colors of vegetables</p>
+
+        <ul id="list">
+
+        </ul>
+
+        <script>
+			$(document).ready(function() {
+
+				$("#btn1").click(function() {
+					$.get("files/vegetables.json", function(data) {
+						console.log("Click!");
+						console.log(data);
+						// Loop over the vegetables
+						// Append their names and colors to the list
+					}, "json");
+				});
+			});
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery - Styling by Exchanging Classes</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+      }
+      .normal {
+        border: 2px solid blue;
+        background-color: yellow;
+        color: blue;
+      }
+      .inverse {
+        border: 2px solid yellow;
+        background-color: blue;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p class="normal">
+      Paragraph 1
+    </p>
+    <p class="normal">
+      Paragraph 2
+    </p>
+    <p class="normal">
+      Paragraph 3
+    </p>
+
+    <button type="button" id="toggle">
+      Toggle Display!
+    </button>
+
+    <script>
+      $(document).ready(function() {
+
+        var normalDisplay = true;
+
+        $("#toggle").click(function() {
+          if (normalDisplay) {
+            $("p").removeClass("normal");
+            $("p").addClass("inverse");
+            normalDisplay = false;
+          } else {
+            $("p").removeClass("inverse");
+            $("p").addClass("normal");
+            normalDisplay = true;
+          }
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

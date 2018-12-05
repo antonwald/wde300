@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Deferred Object - Animation</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+        <style>
+			#box1 {
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				height: 50px;
+				width: 50px;
+				background-color: #2694E8;
+			}
+            #box2 {
+                position: absolute;
+                top: 100px;
+                left: 50px;
+                height: 50px;
+                width: 50px;
+                background-color: #CF867E;
+            }
+            #box3 {
+                position: absolute;
+                top: 150px;
+                left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+
+        <script>
+          $(document).ready(function() {
+
+            function animate1() {
+              var dfd = new $.Deferred();
+              setTimeout(function() {
+                $('#box1').animate({
+                  left : 250
+                }, 1000, function() {
+                  dfd.resolve('Animation 1 finished.');
+                });
+              }, 1000);
+              return dfd.promise();
+            }
+
+            function animate2() {
+              var dfd = new $.Deferred();
+              setTimeout(function() {
+                $('#box2').animate({
+                  left : 250
+                }, 4000, function() {
+                  dfd.resolve('Animation 2 finished.');
+                });
+
+              }, 1000)
+              return dfd.promise();
+            }
+
+
+            $.when(animate1(), animate2()).then(function() {
+              console.log('Both animations finished.');
+              $('#box3').text('Both animations finished.');
+            });
+          });
+
+        </script>
+
+    </body>
+</html>

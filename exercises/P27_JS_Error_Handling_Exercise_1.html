@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Error Handling</title>
+</head>
+<body>
+	<script>
+		try {
+			new Array(-20);
+			// var obj = x;
+			// eval("a ++ b");
+			// new 10;
+		} catch (e) {
+			console.log(e);
+			switch (e.name) {
+			case ('RangeError'):
+				console.log("This was a range error, since " + e.name);
+				break;
+			case ('___'):
+				console.log("This was a reference error, since " + e.name);
+				break;
+			case ('___'):
+				console.log("This was a syntax error, since " + e.name);
+				break;
+			case ('___'):
+				console.log("This was a type error, since " + e.name);
+				break;
+			default:
+				console.log("This was an unknown error, since " + e.name);
+			}
+		} finally {
+			console.log("Finally, we have arrived here!")
+		}
+	</script>
+</body>
+</html>

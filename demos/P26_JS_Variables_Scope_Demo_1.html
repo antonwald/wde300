@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Variables and Scope</title>
+  </head>
+  <body>
+
+    <script>
+      // Example 1
+      function makeMultiplier(p) {
+        return function(x) {
+          p++;
+          return p * x;
+        }
+      }
+      
+      var mult7 = makeMultiplier(7);
+      var mult72 = makeMultiplier(72);
+      var mult5 = makeMultiplier(5);
+       
+      console.log( typeof mult7);
+      console.log(mult7(5));
+      console.log(mult72(5));
+      
+      console.log(mult5(5));
+
+
+
+    </script>
+
+  </body>
+</html>

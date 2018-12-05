@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery - Button Event</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+
+        <h3>Reacting to the click event of a button</h3>
+
+        <button id="push1">
+            Click me!
+        </button>
+
+        <p id="controlOutput"></p>
+
+        <script>
+			$(document).ready(function() {
+
+				$("#push1").click(function() {
+					$("#controlOutput").html("<b>The button has been clicked.</b>");
+				});
+
+			});
+        </script>
+    </body>
+</html>

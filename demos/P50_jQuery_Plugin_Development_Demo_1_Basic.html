@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Plugin Development - Basic Example</title>
+        <script src="/lib/jquery-1.6.4.js"></script>
+        <style>
+			div {
+				background-color: #A6C9E2;
+				width: 100px;
+				margin: 10px;
+				display: inline-block;
+			}
+			p {
+				margin: 10px;
+			}
+        </style>
+    </head>
+    <body>
+
+        <div title="Sample Box" style="height: 50px;">
+            Box
+        </div>
+        <div style="height: 100px;">
+            Box
+        </div>
+        <div style="height: 150px;">
+            Box
+        </div>
+
+        <p>
+            <button>
+                Tallest?
+            </button>
+        </p>
+
+        <script>
+          (function($) {
+
+            $.fn.maxHeight = function() {
+
+              var max = 0;
+
+              this.each(function() {
+                max = Math.max(max, $(this).height());
+              });
+
+              return max;
+            };
+          })(jQuery);
+
+          $(document).ready(function() {
+              
+            $('button').click(function() {
+              var tallest = $('div').maxHeight();
+              // Alerts the height of the tallest div
+              alert(tallest);
+            });
+            
+          });
+
+        </script>
+    </body>
+</html>

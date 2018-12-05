@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+
+  </head>
+  <body>
+    <form>
+      <fieldset id="registration">
+        <h1> New Account </h1>
+        <!-- first name -->
+        <label for="first_name">First Name</label>
+        <input id="first_name" type="text" autofocus name="first_name"
+        placeholder="John">
+        <!-- last name -->
+        <label for="last_name">Last Name</label>
+        <input id="last_name" type="text" name="last_name" placeholder="Smith">
+        <!-- age -->
+        <label for="age">Age</label>
+        <input id="age" type="number" name="age" min="6" max="99"
+        placeholder="6-99">
+        <!-- email -->
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="john@smith.org">
+        <!-- homepage -->
+        <label for="homepage">Homepage</label>
+        <input id="homepage" type="url" name="homepage" placeholder="www.smith.org">
+        <!-- password -->
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password"  value="" autocomplete="off" placeholder="8-10 characters" />
+        <!-- password confirmation -->
+        <label for="password_confirmation">Password</label>
+        <input id="password_confirmation" type="password" name="password_confirmation"
+        value="" autocomplete="off" placeholder="Repeat password" />
+        <input id="submit" type="submit" value="Register">
+      </fieldset>
+    </form>
+  </body>
+</html>

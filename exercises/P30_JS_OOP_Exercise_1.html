@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript - Object Oriented Programming</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// --- Shape
+		// Add code here
+
+		// --- Circle
+		// Add code here
+
+		// --- Square
+		// Add code here
+
+		// --- Examples
+		var shape1 = new Shape();
+		shape1.info();
+
+		var circle1 = new Circle();
+		circle1.info();
+		circle1.area();
+
+		Circle.prototype.info = function() {
+			console.log("The center of the circle is at (" + this.centerX + ","
+					+ this.centerY + ") and it's radius is " + this.radius);
+
+		};
+		var circle2 = new Circle();
+		circle2.info();
+
+		var square1 = new Square(1, 1, 2);
+		square1.info();
+		square1.area();
+	</script>
+</body>
+</html>

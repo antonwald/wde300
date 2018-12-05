@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Playground 1</title>
+  </head>
+  <body>
+
+    <button type="button">
+      Click me!
+    </button>
+
+    <script>
+      // DOM Level 2
+      var oButton = document.querySelector("button");
+      oButton.addEventListener("click", function() {
+        alert('Button clicked again.');
+      });
+      oButton.addEventListener("mouseover", function() {
+        var oStyle = document.createAttribute("style");
+        oStyle.nodeValue = "background-color: cyan";
+        oButton.setAttributeNode(oStyle);
+      })
+      oButton.addEventListener("mouseout", function() {
+        oButton.removeAttribute("style");
+      })
+
+    </script>
+
+  </body>
+</html>

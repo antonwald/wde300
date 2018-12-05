@@ -1,0 +1,12 @@
+[
+	{
+		"name": "cucumber",
+		"color": "green"
+	}, {
+		"name": "tomato",
+		"color": "red"
+	}, {
+		"name": "pepper",
+		"color": "yellow"
+	}
+]

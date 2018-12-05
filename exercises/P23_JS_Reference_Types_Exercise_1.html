@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript - Reference Types</title>
+    </head>
+    <body>
+        <script>
+			var fruits = ["Banana", "Apple", "Plum", "Cherry"];
+
+			// Add code for function insertAfter here
+			// Consider the use of the array splice method
+			function insertAfter(arr, elem, data){
+				
+				var iPos = arr.indexOf(elem);
+				
+				if (iPos < 0) {
+					return arr;
+				}
+				
+				if (data && data.length){
+					// arr.splice(iPos + 1, 0, data);
+					for (var i=0; i < data.length; i++){
+						var sData = data[i];
+						arr.splice(iPos + 1 + i, 0, sData);
+					}
+				}
+				
+				return arr; 
+			}
+             
+             
+            // var insertAfter = function(){};
+             
+             
+            var value = insertAfter(fruits, "Apple", ["Melon", "Lemon"]);
+			console.log(value);
+			// ["Banana", "Apple", "Melon", "Lemon", "Plum", "Cherry"]
+        </script>
+    </body>
+</html>

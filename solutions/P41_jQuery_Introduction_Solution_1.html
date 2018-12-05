@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery - Introduction</title>
+    <script src="/lib/jquery-1.6.4.js"></script>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 20px;
+      }
+      #btn {
+        position: absolute;
+        top: 240px;
+        left: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <button type="button" id="btn">
+      Click me!
+    </button>
+
+    <script>
+      $(document).ready(function() {
+
+        var boxVisible = true;
+        
+        $("#btn").click(function() {
+          if (boxVisible) {
+            console.log("fading out ...")
+            $("#box").fadeOut(2000);
+            boxVisible = false;
+          } else {
+            console.log("fading in ...")
+            $("#box").fadeIn(1000);
+            boxVisible = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
